@@ -1,7 +1,11 @@
 package com.kafka.example.dispatch.service;
 
+import com.kafka.example.dispatch.message.OrderCreated;
+import com.kafka.example.dispatch.util.TestEventData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static java.util.UUID.randomUUID;
 
 public class DispatchServiceTest {
 
@@ -14,6 +18,7 @@ public class DispatchServiceTest {
 
     @Test
     void process() {
-        service.process("payload");
+        OrderCreated testEvent = TestEventData.buildOrderCreatedEvent(randomUUID(), randomUUID().toString());
+        service.process(testEvent);
     }
 }

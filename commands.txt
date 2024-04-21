@@ -1,0 +1,5 @@
+To run kafka server at console:
+    bin/kafka-server-start.sh config/kraft/server.properties
+
+To run producer at console:
+    bin/kafka-console-producer.sh --topic order.created --bootstrap-server localhost:9092

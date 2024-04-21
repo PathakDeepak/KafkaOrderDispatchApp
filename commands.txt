@@ -1,5 +1,8 @@
 To run kafka server at console:
     bin/kafka-server-start.sh config/kraft/server.properties
 
-To run producer at console:
+To run producer at console for order inbound event Order Created:
     bin/kafka-console-producer.sh --topic order.created --bootstrap-server localhost:9092
+
+To run consumer at console for order outbound event Order dispatched:
+    bin/kafka-console-consumer.sh --topic order.dispatched --bootstrap-server localhost:9092
